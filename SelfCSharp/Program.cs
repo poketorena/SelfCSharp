@@ -10,9 +10,9 @@ namespace SelfCSharp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("あなたの名前は？");
-            string name = Console.ReadLine();
-            Console.WriteLine("こんにちは、{0}さん！", name);
+            object obj = 10;
+            obj = "hello!";
+            obj = 'あ';
         }
     }
 }
