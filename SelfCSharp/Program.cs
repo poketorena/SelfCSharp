@@ -11,7 +11,7 @@ namespace SelfCSharp
         static void Main(string[] args)
         {
             string str = null;
-            string unspace = str.Trim();
+            string unspace = str?.Trim();
         }
     }
 }
