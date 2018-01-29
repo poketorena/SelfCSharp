@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text;
 
 namespace SelfCSharp
 {
@@ -10,12 +11,13 @@ namespace SelfCSharp
     {
         static void Main(string[] args)
         {
-            var result = "";
+            var builder = new StringBuilder();
             for (int i = 0; i < 100000; i++)
             {
-                result += "いろは";
+                builder.Append("いろは");
             }
 
+            var result = builder.ToString();
             Console.WriteLine(result);
         }
     }
