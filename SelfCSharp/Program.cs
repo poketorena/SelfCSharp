@@ -10,10 +10,8 @@ namespace SelfCSharp
     {
         static void Main(string[] args)
         {
-            string str = " Hello World! ";
-            Console.WriteLine(str);
-            var nospace = str.Trim();
-            Console.WriteLine(nospace);
+            string str = null;
+            string unspace = str.Trim();
         }
     }
 }
