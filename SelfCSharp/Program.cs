@@ -10,14 +10,10 @@ namespace SelfCSharp
     {
         static void Main(string[] args)
         {
-            long m = 10;
-            int i = (int)m;
-            Console.WriteLine($"{m.ToString()} {i.ToString()}");
-
-            string str = "15";
-            int tmp = 0;
-            Console.WriteLine(int.TryParse(str, out tmp));
-            Console.WriteLine(tmp);
+            string str = " Hello World! ";
+            Console.WriteLine(str);
+            var nospace = str.Trim();
+            Console.WriteLine(nospace);
         }
     }
 }
