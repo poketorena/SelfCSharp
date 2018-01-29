@@ -10,8 +10,9 @@ namespace SelfCSharp
     {
         static void Main(string[] args)
         {
-            int[] arr = { 1, 2, 3, 4, 5 };
-            foreach (var item in arr)
+            int[] data;
+            data = new[] { 1, 2, 3, 4, 5 };
+            foreach (var item in data)
             {
                 Console.WriteLine(item);
             }
