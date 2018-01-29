@@ -10,17 +10,13 @@ namespace SelfCSharp
     {
         static void Main(string[] args)
         {
-            var num = 10d;
-            var name = "poketorena";
-            Console.WriteLine($"ようこそ{name}さん！");
-            int? i = null;
-            var multi = new int[5, 4];
-            var JyagArr = new int[3][]
+            var result = "";
+            for (int i = 0; i < 100000; i++)
             {
-                new int[]{2, 3, 5 },
-                new int[]{1, 2 },
-                new int[]{10, 11, 12, 13 }
-            };
+                result += "いろは";
+            }
+
+            Console.WriteLine(result);
         }
     }
 }
