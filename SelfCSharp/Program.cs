@@ -10,8 +10,8 @@ namespace SelfCSharp
     {
         static void Main(string[] args)
         {
-            string str = null;
-            string unspace = str?.Trim();
+            int num = null;
+            //int? num2 = null;
         }
     }
 }
