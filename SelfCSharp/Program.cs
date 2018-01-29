@@ -10,15 +10,9 @@ namespace SelfCSharp
     {
         static void Main(string[] args)
         {
-            int? num = null;
-            if (num.HasValue)
-            {
-                Console.WriteLine($"numは{num.Value.ToString()}だよ");
-            }
-            else
-            {
-                Console.WriteLine("numはnullだよ");
-            }
+            int? num1 = 3;
+            int num2 = 5;
+            Console.WriteLine(num1+num2);
         }
     }
 }
