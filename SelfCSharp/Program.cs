@@ -10,8 +10,14 @@ namespace SelfCSharp
     {
         static void Main(string[] args)
         {
-            var str2 = "山田";
-            Console.WriteLine($"こんにちは{str2}さん！");
+            long m = 10;
+            int i = (int)m;
+            Console.WriteLine($"{m.ToString()} {i.ToString()}");
+
+            string str = "15";
+            int tmp = 0;
+            Console.WriteLine(int.TryParse(str, out tmp));
+            Console.WriteLine(tmp);
         }
     }
 }
