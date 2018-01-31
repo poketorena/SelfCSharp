@@ -11,14 +11,17 @@ namespace SelfCSharp
     {
         static void Main(string[] args)
         {
-            var builder = new StringBuilder();
-            for (int i = 0; i < 100000; i++)
-            {
-                builder.Append("いろは");
-            }
+            string value = null;
+            //value = "こんにちは";
 
-            var result = builder.ToString();
-            Console.WriteLine(result);
+            if (value == null)
+            {
+                Console.WriteLine("既定値");
+            }
+            else
+            {
+                Console.WriteLine(value);
+            }
         }
     }
 }
