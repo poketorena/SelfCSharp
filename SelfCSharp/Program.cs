@@ -12,16 +12,9 @@ namespace SelfCSharp
         static void Main(string[] args)
         {
             string value = null;
-            //value = "こんにちは";
+            value = "こんにちは";
 
-            if (value == null)
-            {
-                Console.WriteLine("既定値");
-            }
-            else
-            {
-                Console.WriteLine(value);
-            }
+            Console.WriteLine(value == null ? "既定値": value);
         }
     }
 }
