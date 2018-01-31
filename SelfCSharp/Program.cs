@@ -14,7 +14,7 @@ namespace SelfCSharp
             string value = null;
             value = "こんにちは";
 
-            Console.WriteLine(value == null ? "既定値": value);
+            Console.WriteLine(value ?? "既定値");
         }
     }
 }
