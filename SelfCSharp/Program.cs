@@ -11,11 +11,11 @@ namespace SelfCSharp
     {
         static void Main(string[] args)
         {
-            string str = "http://google.com";
+            string str = "hogehoge.zip";
             // 変数strが「http://」で始まる場合にメッセージを表示
-            if (str != null && str.StartsWith("http://"))
+            if (str != null && str.EndsWith(".zip"))
             {
-                Console.WriteLine("「http://～」で始まります。");
+                Console.WriteLine("「.zip」で終わります。");
             }
         }
     }
