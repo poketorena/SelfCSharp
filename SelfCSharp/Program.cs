@@ -11,19 +11,18 @@ namespace SelfCSharp
     {
         static void Main(string[] args)
         {
-            var rank = "甲";
-
-            switch (rank)
+            object obj = -123;
+            switch (obj)
             {
-                case "甲":
-                case "乙":
-                    Console.WriteLine("良いです");
+                // 変数objがint型の場合、絶対値を求める
+                case int i:
+                    Console.WriteLine(Math.Abs(i));
                     break;
-                case "丙":
-                    Console.WriteLine("がんばりましょう");
+                case string str:
+                    Console.WriteLine(str[0]);
                     break;
                 default:
-                    Console.WriteLine("？？？");
+                    Console.WriteLine("意図しない型です");
                     break;
             }
         }
