@@ -11,20 +11,17 @@ namespace SelfCSharp
         static void Main(string[] args)
         {
             var language = "C#";
-            switch (language)
+            if (language == "C#" || language == "Visulal Basic" || language == "F#")
             {
-                case "C#":
-                case "Visulal Basic":
-                case "F#":
-                    Console.WriteLine(".Net対応言語");
-                    break;
-                case "Python":
-                case "Ruby":
-                    Console.WriteLine("スクリプト言語");
-                    break;
-                default:
-                    Console.WriteLine("不明");
-                    break;
+                Console.WriteLine(".Net対応言語");
+            }
+            else if (language == "Python" || language == "Ruby")
+            {
+                Console.WriteLine("スクリプト言語");
+            }
+            else
+            {
+                Console.WriteLine("不明");
             }
         }
     }
