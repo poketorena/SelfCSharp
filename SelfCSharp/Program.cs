@@ -10,16 +10,18 @@ namespace SelfCSharp
     {
         static void Main(string[] args)
         {
-            var oddsum = 0;
-            for (int i = 100; i <= 200; i++)
+            var i = 1;
+            var sum = 0;
+            while (i <= 100)
             {
-                if (i % 2 == 0)
+                sum += i;
+                if (sum > 1000)
                 {
-                    continue;
+                    break;
                 }
-                oddsum += i;
+                i++;
             }
-            Console.WriteLine(oddsum);
+            Console.WriteLine($"合計が1000を超えるのは、１～{i}を加算したときです。");
         }
     }
 }
