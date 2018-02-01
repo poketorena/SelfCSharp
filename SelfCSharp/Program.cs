@@ -11,10 +11,12 @@ namespace SelfCSharp
     {
         static void Main(string[] args)
         {
-            string value = null;
-            value = "こんにちは";
-
-            Console.WriteLine(value ?? "既定値");
+            string str = "http://google.com";
+            // 変数strが「http://」で始まる場合にメッセージを表示
+            if (str != null && str.StartsWith("http://"))
+            {
+                Console.WriteLine("「http://～」で始まります。");
+            }
         }
     }
 }
