@@ -11,18 +11,20 @@ namespace SelfCSharp
     {
         static void Main(string[] args)
         {
-            object obj = -123;
+            object obj = 123;
             switch (obj)
             {
-                // 変数objがint型の場合、絶対値を求める
-                case int i:
-                    Console.WriteLine(Math.Abs(i));
+                case int i when i >= 15:
+                    Console.WriteLine("15以上の数値です。");
                     break;
-                case string str:
-                    Console.WriteLine(str[0]);
+                case int i:
+                    Console.WriteLine("数値です。");
+                    break;
+                case string str when str.Length < 10:
+                    Console.WriteLine("10文字未満の文字列です。");
                     break;
                 default:
-                    Console.WriteLine("意図しない型です");
+                    Console.WriteLine("意図しない値です。");
                     break;
             }
         }
