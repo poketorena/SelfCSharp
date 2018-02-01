@@ -10,18 +10,22 @@ namespace SelfCSharp
     {
         static void Main(string[] args)
         {
-            var i = 1;
-            var sum = 0;
-            while (i <= 100)
+            var language = "C#";
+            switch (language)
             {
-                sum += i;
-                if (sum > 1000)
-                {
+                case "C#":
+                case "Visulal Basic":
+                case "F#":
+                    Console.WriteLine(".Net対応言語");
                     break;
-                }
-                i++;
+                case "Python":
+                case "Ruby":
+                    Console.WriteLine("スクリプト言語");
+                    break;
+                default:
+                    Console.WriteLine("不明");
+                    break;
             }
-            Console.WriteLine($"合計が1000を超えるのは、１～{i}を加算したときです。");
         }
     }
 }
