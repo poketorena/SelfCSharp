@@ -12,10 +12,12 @@ namespace SelfCSharp
     {
         static void Main(string[] args)
         {
-
+            #region MyRegion
 #if DEBUG
             Console.WriteLine("デバッグ時にだけ表示します");
 #endif
+            #endregion
+
         }
     }
 }
