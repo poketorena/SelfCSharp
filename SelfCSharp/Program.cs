@@ -11,9 +11,13 @@ namespace SelfCSharp
     {
         static void Main(string[] args)
         {
-            foreach (var item in args)
+            for (int i = 1; i < 10; i++)
             {
-                Console.WriteLine($"こんにちは{item}さん！");
+                for (int j = 1; j < 10; j++)
+                {
+                    Console.Write($"{i * j} ");
+                }
+                Console.WriteLine();
             }
         }
     }
