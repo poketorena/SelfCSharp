@@ -1,10 +1,8 @@
-﻿#define DEBUG
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Text;
 
 namespace SelfCSharp
 {
@@ -12,12 +10,16 @@ namespace SelfCSharp
     {
         static void Main(string[] args)
         {
-            #region MyRegion
-#if DEBUG
-            Console.WriteLine("デバッグ時にだけ表示します");
-#endif
-            #endregion
-
+            var oddsum = 0;
+            for (int i = 100; i <= 200; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    continue;
+                }
+                oddsum += i;
+            }
+            Console.WriteLine(oddsum);
         }
     }
 }
