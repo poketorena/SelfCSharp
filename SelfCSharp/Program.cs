@@ -11,11 +11,22 @@ namespace SelfCSharp
     {
         static void Main(string[] args)
         {
-            string str = "hogehoge.zip";
-            // 変数strが「http://」で始まる場合にメッセージを表示
-            if (str != null && str.EndsWith(".zip"))
+            var rank = "甲";
+
+            switch (rank)
             {
-                Console.WriteLine("「.zip」で終わります。");
+                case "甲":
+                    Console.WriteLine("大変良いです。");
+                    //break;
+                case "乙":
+                    Console.WriteLine("良いです");
+                    break;
+                case "丙":
+                    Console.WriteLine("がんばりましょう");
+                    break;
+                default:
+                    Console.WriteLine("？？？");
+                    break;
             }
         }
     }
