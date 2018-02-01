@@ -11,14 +11,19 @@ namespace SelfCSharp
     {
         static void Main(string[] args)
         {
-            for (int i = 1; i < 10; i++)
+            var sum = 0;
+            var i = 0;
+            while (i <= 100)
             {
-                for (int j = 1; j < 10; j++)
+                if (i % 2 != 0)
                 {
-                    Console.Write($"{i * j} ");
+                    i++;
+                    continue;
                 }
-                Console.WriteLine();
+                sum += i;
+                i++;
             }
+            Console.WriteLine($"合計値は{sum}です。");
         }
     }
 }
