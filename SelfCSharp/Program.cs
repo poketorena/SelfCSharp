@@ -16,8 +16,6 @@ namespace SelfCSharp
             switch (rank)
             {
                 case "甲":
-                    Console.WriteLine("大変良いです。");
-                    //break;
                 case "乙":
                     Console.WriteLine("良いです");
                     break;
