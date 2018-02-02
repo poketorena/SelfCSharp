@@ -11,9 +11,9 @@ namespace SelfCSharp
     {
         static void Main(string[] args)
         {
-            var tmp1 = "ボクの名前は太郎です";
-            tmp1 = tmp1.Replace("ボク", "私");
-            Console.WriteLine(tmp1);
+            var time1 = DateTime.Parse("2018/02/13");
+            var time2 = DateTime.Parse("2020/08/04");
+            Console.WriteLine((time2.Subtract(time1)).ToString("%d"));
         }
     }
 }
