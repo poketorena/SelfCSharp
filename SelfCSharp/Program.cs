@@ -10,19 +10,9 @@ namespace SelfCSharp
     {
         static void Main(string[] args)
         {
-            var language = "C#";
-            if (language == "C#" || language == "Visulal Basic" || language == "F#")
-            {
-                Console.WriteLine(".Net対応言語");
-            }
-            else if (language == "Python" || language == "Ruby")
-            {
-                Console.WriteLine("スクリプト言語");
-            }
-            else
-            {
-                Console.WriteLine("不明");
-            }
+            var str = "プログラミング言語";
+            var result = str.Substring(4, 3);
+            Console.WriteLine(result);
         }
     }
 }
