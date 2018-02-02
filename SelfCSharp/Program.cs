@@ -11,9 +11,8 @@ namespace SelfCSharp
     {
         static void Main(string[] args)
         {
-            var time = DateTime.Now;
-            time = time.AddDays(15);
-            Console.WriteLine(time.ToString());
+            var str = "となりのきゃくはよくかきくうきゃくだ";
+            Console.WriteLine(str.LastIndexOf("きゃく"));
         }
     }
 }
