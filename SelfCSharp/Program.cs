@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -11,9 +12,11 @@ namespace SelfCSharp
     {
         static void Main(string[] args)
         {
-            var time1 = DateTime.Parse("2018/02/13");
-            var time2 = DateTime.Parse("2020/08/04");
-            Console.WriteLine((time2.Subtract(time1)).ToString("%d"));
+            var result = string.Join(",", args);
+            using (var writer = new StreamWriter(@"C:\data\sample.dat", append: true))
+            {
+                writer.WriteLine(result);
+            }
         }
     }
 }
