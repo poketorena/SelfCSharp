@@ -12,10 +12,14 @@ namespace SelfCSharp
     {
         static void Main(string[] args)
         {
-            var result = string.Join(",", args);
-            using (var writer = new StreamWriter(@"C:\data\sample.dat", append: true))
+            var result1 = Math.Pow(5, 3);
+            var result2 = Math.Abs(-12);
+            var arr = new[] { 105, 18, 25, 30 };
+            Array.Sort(arr);
+            Console.WriteLine($"{result1}, {result2}");
+            foreach (var item in arr)
             {
-                writer.WriteLine(result);
+                Console.WriteLine(item);
             }
         }
     }
