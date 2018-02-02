@@ -11,9 +11,9 @@ namespace SelfCSharp
     {
         static void Main(string[] args)
         {
-            var tmp1 = "東京";
-            var tmp2 = 15.156;
-            Console.WriteLine("{0}の気温は{1:f1}℃です。",tmp1,tmp2);
+            var tmp1 = "ボクの名前は太郎です";
+            tmp1 = tmp1.Replace("ボク", "私");
+            Console.WriteLine(tmp1);
         }
     }
 }
