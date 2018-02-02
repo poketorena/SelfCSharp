@@ -11,10 +11,9 @@ namespace SelfCSharp
     {
         static void Main(string[] args)
         {
-            var str = "2018/02/15 13:17:23";
-            var time = DateTime.Parse(str);
-            Console.WriteLine(time.Day);
-            Console.WriteLine(time.Hour);
+            var time = DateTime.Now;
+            time = time.AddDays(15);
+            Console.WriteLine(time.ToString());
         }
     }
 }
