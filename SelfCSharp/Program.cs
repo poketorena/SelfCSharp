@@ -11,8 +11,9 @@ namespace SelfCSharp
     {
         static void Main(string[] args)
         {
-            var str = "となりのきゃくはよくかきくうきゃくだ";
-            Console.WriteLine(str.LastIndexOf("きゃく"));
+            var tmp1 = "東京";
+            var tmp2 = 15.156;
+            Console.WriteLine("{0}の気温は{1:f1}℃です。",tmp1,tmp2);
         }
     }
 }
