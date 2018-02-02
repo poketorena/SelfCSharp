@@ -10,9 +10,12 @@ namespace SelfCSharp
     {
         static void Main(string[] args)
         {
-            var str = "プログラミング言語";
-            var result = str.Substring(4, 3);
-            Console.WriteLine(result);
+            var str = "鈴木\t太郎\t男\t50歳\t広島県";
+            var result = str.Split('\t');
+            foreach (var item in result)
+            {
+                Console.WriteLine(item);
+            }
         }
     }
 }
