@@ -11,9 +11,10 @@ namespace SelfCSharp
     {
         static void Main(string[] args)
         {
-            var str = "お問い合わせはhoge@example.comまで";
-            var rgx = new Regex(@"[a-z_0-9]+([-+.][a-z_0-9]+)*@[a-z_0-9]+([-.][a-z_0-9]+)*\.[a-z_0-9]+([-.][a-z_0-9]+)*", RegexOptions.IgnoreCase);
-            Console.WriteLine(rgx.Replace(str, "<a href=\"mailto:$0\">$0</a>"));
+            var str = "2018/02/15 13:17:23";
+            var time = DateTime.Parse(str);
+            Console.WriteLine(time.Day);
+            Console.WriteLine(time.Hour);
         }
     }
 }
