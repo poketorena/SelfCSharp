@@ -12,29 +12,29 @@ namespace SelfCSharp
     {
         static void Main(string[] args)
         {
-            // コレクション初期化子
-            var flower = new Dictionary<string, string>()
+            var list = new List<int>()
             {
-                {"Rose", "バラ"},
-                {"Sunflower", "ひまわり"},
-                {"Mornig Glory", "あさがお"}
+                15,23,29,37
             };
 
-            // インデックス初期化子
-            var flower2 = new Dictionary<string, string>()
+            var d = new Dictionary<string, string>()
             {
-                ["Rose"] = "バラ",
-                ["Sunflower"] = "ひまわり",
-                ["Mornig Glory"] = "あさがお"
+                ["cat"] = "猫",
+                ["dog"] = "犬"
             };
 
-            foreach (var item in flower)
+            var enu1 = list.GetEnumerator();
+            while (enu1.MoveNext())
             {
-                Console.WriteLine(item);
+                int num = enu1.Current;
+                Console.WriteLine(num);
             }
-            foreach (var item in flower2)
+
+            var enu2 = d.GetEnumerator();
+            while (enu2.MoveNext())
             {
-                Console.WriteLine(item);
+                var pair = enu2.Current;
+                Console.WriteLine(pair);
             }
         }
     }
