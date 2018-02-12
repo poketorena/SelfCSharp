@@ -13,11 +13,8 @@ namespace SelfCSharp
     {
         static void Main(string[] args)
         {
-            var radius = 3.0;
-            var c1 = new Circle();
-            var c2 = new Circle(radius);
-            Console.WriteLine(c1.GetArea());
-            Console.WriteLine(c2.GetArea());
+            Console.WriteLine(MyClass.GetBmi(10,10));
+            //var v = new MyClass();
         }
     }
 }
