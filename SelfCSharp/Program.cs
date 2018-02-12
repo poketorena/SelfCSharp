@@ -12,12 +12,27 @@ namespace SelfCSharp
     {
         static void Main(string[] args)
         {
-            var result1 = Math.Pow(5, 3);
-            var result2 = Math.Abs(-12);
-            var arr = new[] { 105, 18, 25, 30 };
-            Array.Sort(arr);
-            Console.WriteLine($"{result1}, {result2}");
-            foreach (var item in arr)
+            // コレクション初期化子
+            var flower = new Dictionary<string, string>()
+            {
+                {"Rose", "バラ"},
+                {"Sunflower", "ひまわり"},
+                {"Mornig Glory", "あさがお"}
+            };
+
+            // インデックス初期化子
+            var flower2 = new Dictionary<string, string>()
+            {
+                ["Rose"] = "バラ",
+                ["Sunflower"] = "ひまわり",
+                ["Mornig Glory"] = "あさがお"
+            };
+
+            foreach (var item in flower)
+            {
+                Console.WriteLine(item);
+            }
+            foreach (var item in flower2)
             {
                 Console.WriteLine(item);
             }
