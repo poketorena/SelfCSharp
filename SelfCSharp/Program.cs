@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using SelfCSharp;
 
 namespace SelfCSharp
 {
@@ -12,30 +13,11 @@ namespace SelfCSharp
     {
         static void Main(string[] args)
         {
-            var list = new List<int>()
-            {
-                15,23,29,37
-            };
-
-            var d = new Dictionary<string, string>()
-            {
-                ["cat"] = "猫",
-                ["dog"] = "犬"
-            };
-
-            var enu1 = list.GetEnumerator();
-            while (enu1.MoveNext())
-            {
-                int num = enu1.Current;
-                Console.WriteLine(num);
-            }
-
-            var enu2 = d.GetEnumerator();
-            while (enu2.MoveNext())
-            {
-                var pair = enu2.Current;
-                Console.WriteLine(pair);
-            }
+            var radius = 3.0;
+            var c1 = new Circle();
+            var c2 = new Circle(radius);
+            Console.WriteLine(c1.GetArea());
+            Console.WriteLine(c2.GetArea());
         }
     }
 }
