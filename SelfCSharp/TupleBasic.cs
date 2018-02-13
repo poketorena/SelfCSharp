@@ -13,9 +13,10 @@ namespace SelfCSharp
     {
         static void Main(string[] args)
         {
-            var info = new { Title = "速習C#", Price = 1000 };
-            Console.WriteLine(info.Title);
-            Console.WriteLine(info.Price);
+            var info1 = new { Title = "速習C#", Price = 1000 };
+            var info2 = new { info1.Title, info1.Price };
+            Console.WriteLine(info2.Title);
+            Console.WriteLine(info2.Price);
         }
     }
 }
