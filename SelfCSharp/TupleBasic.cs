@@ -13,7 +13,7 @@ namespace SelfCSharp
     {
         public (int max, int min) GetMaxMin(int x, int y)
         {
-            return x >= y ? (x, y) : (y, x);
+            return x >= y ? (max: x, min: y) : (max: y, min: x);
         }
 
         static void Main(string[] args)
