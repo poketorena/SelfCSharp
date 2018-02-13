@@ -11,16 +11,11 @@ namespace SelfCSharp
 {
     class TupleBasic
     {
-        public (int max, int min) GetMaxMin(int x, int y)
-        {
-            return x >= y ? (max: x, min: y) : (max: y, min: x);
-        }
-
         static void Main(string[] args)
         {
-            var t = (13, 108);
-            Console.WriteLine(t.Item1);
-            Console.WriteLine(t.Item2);
+            var info = new { Title = "速習C#", Price = 1000 };
+            Console.WriteLine(info.Title);
+            Console.WriteLine(info.Price);
         }
     }
 }
