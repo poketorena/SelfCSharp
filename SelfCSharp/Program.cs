@@ -13,8 +13,7 @@ namespace SelfCSharp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(MyClass.GetBmi(10,10));
-            //var v = new MyClass();
+            var s = SelfCSharp.MySingleton.Instance;
         }
     }
 }
