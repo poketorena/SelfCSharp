@@ -9,14 +9,14 @@ using SelfCSharp;
 
 namespace SelfCSharp
 {
-    class TupleBasic
+    class Keisan
     {
+        public static (double addition, double subtract) AddSubtract(double x, double y) => (x + y, x - y);
         static void Main(string[] args)
         {
-            var info1 = new { Title = "速習C#", Price = 1000 };
-            var info2 = new { info1.Title, info1.Price };
-            Console.WriteLine(info2.Title);
-            Console.WriteLine(info2.Price);
+            var tuple = Keisan.AddSubtract(5, 3);
+            Console.WriteLine(tuple.addition);
+            Console.WriteLine(tuple.subtract);
         }
     }
 }
