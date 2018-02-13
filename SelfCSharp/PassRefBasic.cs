@@ -9,12 +9,20 @@ using SelfCSharp;
 
 namespace SelfCSharp
 {
-    class Program
+    class PassRefBasic
     {
+        public int CountUp(ref int data)
+        {
+            data++;
+            return data;
+        }
+
         static void Main(string[] args)
         {
-            var avg = Average.GetAverage(1, 2, 3, 4, 5);
-            Console.WriteLine(avg);
+            var data = 1;
+            var p = new PassRefBasic();
+            Console.WriteLine(p.CountUp(ref data));
+            Console.WriteLine(data);
         }
     }
 }
