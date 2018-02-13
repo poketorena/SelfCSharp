@@ -19,9 +19,9 @@ namespace SelfCSharp
         static void Main(string[] args)
         {
             var a = new TupleBasic();
-            (int max, int min) t = a.GetMaxMin(15, 13);
-            Console.WriteLine(t.max);
-            Console.WriteLine(t.min);
+            var (_, min)  = a.GetMaxMin(15, 13);
+            Console.WriteLine();
+            Console.WriteLine(min);
 
             var (resultMax, resultMin) = a.GetMaxMin(3, 5);
             Console.WriteLine(resultMax);
