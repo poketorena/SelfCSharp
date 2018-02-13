@@ -28,8 +28,7 @@ namespace SelfCSharp
         static void Main(string[] args)
         {
             var a = new PassOut();
-            int resultMax, resultMin;
-            a.GetMaxMin(5, 3, out resultMax, out resultMin);
+            a.GetMaxMin(5, 3, out int resultMax, out int resultMin);
             Console.WriteLine(resultMax);
             Console.WriteLine(resultMin);
         }
