@@ -17,5 +17,19 @@ namespace SelfCSharp.Chap08.ExtensionBasic
             }
             return builder.ToString();
         }
+
+        public static string ToTitleCase(this string str)
+        {
+            if (string.IsNullOrEmpty(str))
+            {
+                return null;
+            }
+
+            if (str.Length == 1)
+            {
+                return str[0].ToString().ToUpper();
+            }
+            return str[0].ToString().ToUpper() + str.Substring(1);
+        }
     }
 }

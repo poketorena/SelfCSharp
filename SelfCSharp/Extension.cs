@@ -13,8 +13,9 @@ namespace SelfCSharp
     {
         static void Main(string[] args)
         {
-            string s = "(ΦωΦ)";
-            Console.WriteLine(s.Repeat(3));
+            var str = "H";
+            var UpperStr = str.ToTitleCase();
+            Console.WriteLine(UpperStr);
         }
     }
 }
