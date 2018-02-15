@@ -5,16 +5,16 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using SelfCSharp;
+using SelfCSharp.Chap08.ExtensionBasic;
 
 namespace SelfCSharp
 {
-    class IndexerBasic
+    class Extension
     {
-        public static (double addition, double subtract) AddSubtract(double x, double y) => (x + y, x - y);
         static void Main(string[] args)
         {
-            Console.WriteLine(typeof(IndexerBasic));
+            string s = "(ΦωΦ)";
+            Console.WriteLine(s.Repeat(3));
         }
     }
 }
