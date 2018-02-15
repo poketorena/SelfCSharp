@@ -14,16 +14,7 @@ namespace SelfCSharp
         public static (double addition, double subtract) AddSubtract(double x, double y) => (x + y, x - y);
         static void Main(string[] args)
         {
-            var value = new IndexerBasic();
-
-            if (value is IndexerBasic ib)
-            {
-                Console.WriteLine(ib.GetType());
-            }
-            else
-            {
-                Console.WriteLine($"変数valueの型は{nameof(IndexerBasic)}じゃないよ");
-            }
+            Console.WriteLine(typeof(IndexerBasic));
         }
     }
 }
