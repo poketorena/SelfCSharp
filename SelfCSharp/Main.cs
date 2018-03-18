@@ -13,8 +13,8 @@ namespace SelfCSharp
     {
         static void Main(string[] args)
         {
-            int i = -25;
-            Console.WriteLine(i >= 0 ? Math.Sqrt(i) : throw new Exception("iは整数でなければいけません！"));
+            var list = new List<int> { 1, 2, 3, 4, 5 };
+            Class1.PrintList(list);
         }
     }
 }
