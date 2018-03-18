@@ -8,8 +8,8 @@ namespace SelfCSharp
 {
     struct Coordinates
     {
-        public double Latitude;
-        public double Longitude;
+        public double Latitude { get; set; }
+        public double Longitude { get; set; }
 
         public override string ToString()
         {
@@ -18,8 +18,7 @@ namespace SelfCSharp
 
         public Coordinates(double latitude, double longitude)
         {
-            ToString();
-            this.Latitude = latitude;
+            //this.Latitude = latitude;
             this.Longitude = longitude;
         }
     }
