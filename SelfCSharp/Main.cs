@@ -14,7 +14,16 @@ namespace SelfCSharp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(Abs(-5));
+            try
+            {
+                throw new IOException();
+            }
+            catch (Exception e) when (
+            e is IOException ||
+            e is ArgumentException)
+            {
+                throw;
+            }
         }
     }
 }
