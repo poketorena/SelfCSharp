@@ -14,9 +14,7 @@ namespace SelfCSharp
     {
         static void Main(string[] args)
         {
-            Coordinates c;
-            c.Latitude = 35.681167;
-            c.Longitude = 139.767052;
+            var c = new Coordinates(35.681167, 35.681167);
             Console.WriteLine(c);
         }
     }

@@ -16,9 +16,10 @@ namespace SelfCSharp
             return $"緯度：{this.Latitude}/経度：{this.Longitude}";
         }
 
-        public Coordinates()
+        public Coordinates(double latitude, double longitude)
         {
-
+            this.Latitude = latitude;
+            this.Longitude = longitude;
         }
     }
 }
