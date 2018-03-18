@@ -6,7 +6,6 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using SelfCSharp;
-using static System.Math;
 
 namespace SelfCSharp
 {
@@ -14,16 +13,8 @@ namespace SelfCSharp
     {
         static void Main(string[] args)
         {
-            try
-            {
-                throw new IOException();
-            }
-            catch (Exception e) when (
-            e is IOException ||
-            e is ArgumentException)
-            {
-                throw;
-            }
+            int i = -25;
+            Console.WriteLine(i >= 0 ? Math.Sqrt(i) : throw new Exception("iは整数でなければいけません！"));
         }
     }
 }
