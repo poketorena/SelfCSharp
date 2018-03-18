@@ -6,11 +6,15 @@ using System.Threading.Tasks;
 
 namespace SelfCSharp
 {
-    public static class Class1
+    struct MyStruct
     {
-        public static void PrintList<T>(List<T> list)
+        public string Message;
+        public int Value;
+
+        public MyStruct(string message, int value)
         {
-            Console.WriteLine(string.Join(",",list.ToArray()));
+            this.Message = message;
+            this.Value = value;
         }
     }
 }
