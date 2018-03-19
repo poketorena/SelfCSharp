@@ -9,13 +9,13 @@ using SelfCSharp;
 
 namespace SelfCSharp
 {
-    class DelegateMulti
+    class DelegateAnonymous
     {
         // string型の引数を受け取り、戻り値はvoidであるデリゲート
         delegate string OutputProcess(string str);
 
         // 配列要素の処理方法をデリゲート経由で受け取れるように
-        void ArrayWalk(string[] data, OutputProcess output)
+        void ArrayWalk(string[] data, Func<string,string> output)
         {
             foreach (var value in data)
             {
@@ -37,11 +37,13 @@ namespace SelfCSharp
         static void Main(string[] args)
         {
             var data = new[] { "あかまきがみ", "あおまきがみ", "きまきがみ" };
+            var dm = new DelegateAnonymous();
 
-            var du = new DelegateMulti();
-            OutputProcess proc = AddQuote;
-            proc += Front4;
-            du.ArrayWalk(data, proc);
+            // デリゲート型の引数に匿名メソッドを渡す
+            dm.ArrayWalk(data, delegate (string d)
+             {
+                 return $"[{d}]";
+             });
         }
     }
 }
