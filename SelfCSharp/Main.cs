@@ -12,26 +12,26 @@ namespace SelfCSharp
     class DelegateMulti
     {
         // string型の引数を受け取り、戻り値はvoidであるデリゲート
-        delegate void OutputProcess(string str);
+        delegate string OutputProcess(string str);
 
         // 配列要素の処理方法をデリゲート経由で受け取れるように
         void ArrayWalk(string[] data, OutputProcess output)
         {
             foreach (var value in data)
             {
-                output(value);
+                Console.WriteLine(output(value));
             }
         }
 
         // OutputProcess型に対応したメソッド
-        static void AddQuote(string data)
+        static string AddQuote(string data)
         {
-            Console.WriteLine($"[{data}]");
+            return $"[{data}]";
         }
 
-        static void Front4(string data)
+        static string Front4(string data)
         {
-            Console.WriteLine(data.Substring(0,4));
+            return data.Substring(0, 4);
         }
 
         static void Main(string[] args)
@@ -41,7 +41,6 @@ namespace SelfCSharp
             var du = new DelegateMulti();
             OutputProcess proc = AddQuote;
             proc += Front4;
-            proc -= Front4;
             du.ArrayWalk(data, proc);
         }
     }
