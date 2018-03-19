@@ -41,6 +41,7 @@ namespace SelfCSharp
             var du = new DelegateMulti();
             OutputProcess proc = AddQuote;
             proc += Front4;
+            proc -= Front4;
             du.ArrayWalk(data, proc);
         }
     }
