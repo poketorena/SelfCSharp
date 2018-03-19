@@ -9,7 +9,7 @@ using SelfCSharp;
 
 namespace SelfCSharp
 {
-    class DelegateUse
+    class DelegateMulti
     {
         // string型の引数を受け取り、戻り値はvoidであるデリゲート
         delegate void OutputProcess(string str);
@@ -28,11 +28,19 @@ namespace SelfCSharp
         {
             Console.WriteLine($"[{data}]");
         }
+
+        static void Front4(string data)
+        {
+            Console.WriteLine(data.Substring(0,4));
+        }
+
         static void Main(string[] args)
         {
             var data = new[] { "あかまきがみ", "あおまきがみ", "きまきがみ" };
-            var du = new DelegateUse();
+
+            var du = new DelegateMulti();
             OutputProcess proc = AddQuote;
+            proc += Front4;
             du.ArrayWalk(data, proc);
         }
     }
