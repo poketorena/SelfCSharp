@@ -16,13 +16,15 @@ namespace SelfCSharp
         delegate TResult Foo<in T, out TResult>(T v1, T v2);
         static void Main(string[] args)
         {
-            var data = from b in AppTables.Books
-                       where b.Title.EndsWith("入門")
-                       orderby b.Price descending
-                       select new { Title = b.Title, Price = b.Price * 1.08 };
+            var data = AppTables.Books
+                .Where(x => x.Published < new DateTime(2016, 12, 1))
+                .OrderBy(x => x.Publisher)
+                .ThenBy(x => x.Title)
+                .Select(x => new { Title = x.Title.Substring(0, 5), Price = x.Price, Publisher = x.Publisher });
+
             foreach (var item in data)
             {
-                Console.WriteLine("Title:" + item.Title + " Price:" + item.Price);
+                Console.WriteLine(item.Title + ":" + item.Price + ":" + item.Publisher);
             }
         }
     }
