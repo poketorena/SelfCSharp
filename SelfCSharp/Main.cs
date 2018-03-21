@@ -10,34 +10,35 @@ using System.Threading;
 
 namespace SelfCSharp
 {
-    class M
+    class LockBasicBad
     {
-        delegate TResult Foo<in T, out TResult>(T v1, T v2);
+        public int Count { get; private set; } = 0;
         static void Main(string[] args)
         {
-            // スレッドを生成
-            var t1 = new Thread(Count);
-            var t2 = new Thread(Count);
-            var t3 = new Thread(Count);
+            const int TaskNum = 500000; // タスクの個数
 
-            // スレッドを開始
-            t1.Start(1);
-            t2.Start(2);
-            t3.Start(3);
+            var ts = new Task[TaskNum];
 
-            // スレッド終了まで待機
-            t1.Join();
-            t2.Join();
-            t3.Join();
-            Console.WriteLine("すべての処理が完了しました。");
+            var tb = new LockBasicBad();
+
+            // タスクを起動
+            for (int i = 0; i < TaskNum; i++)
+            {
+                ts[i] = Task.Run(() => tb.Increment());
+            }
+
+            // 各タスクの終了まで待機
+            for (int i = 0; i < TaskNum; i++)
+            {
+                ts[i].Wait();
+            }
+
+            Console.WriteLine(tb.Count);
         }
 
-        static void Count(object n)
+        void Increment()
         {
-            for (int i = 0; i < 50; i++)
-            {
-                Console.WriteLine($"Thread{n}: {i}");
-            }
+            this.Count++;
         }
     }
 }
