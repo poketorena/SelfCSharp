@@ -13,7 +13,7 @@ namespace SelfCSharp
     class LockBasicBad
     {
         object lockobj = new object();
-        public int Count { get; private set; } = 0;
+        public volatile int Count = 0;
         static void Main(string[] args)
         {
             const int TaskNum = 500000; // タスクの個数
