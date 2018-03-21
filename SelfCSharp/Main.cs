@@ -10,38 +10,28 @@ using System.Threading;
 
 namespace SelfCSharp
 {
-    class LockBasicBad
+    class AsyncBasic
     {
-        object lockobj = new object();
-        public volatile int Count = 0;
         static void Main(string[] args)
         {
-            const int TaskNum = 500000; // タスクの個数
-
-            var ts = new Task[TaskNum];
-
-            var tb = new LockBasicBad();
-
-            // タスクを起動
-            for (int i = 0; i < TaskNum; i++)
-            {
-                ts[i] = Task.Run(() => tb.Increment());
-            }
-
-            // 各タスクの終了まで待機
-            for (int i = 0; i < TaskNum; i++)
-            {
-                ts[i].Wait();
-            }
-
-            Console.WriteLine(tb.Count);
+            // 非同期メソッドを呼び出す
+            Task t = RunAsync();
+            Console.WriteLine("...他の処理...");
+            t.Wait();
         }
 
-        void Increment()
+        // 非同期メソッドを定義
+        static async Task RunAsync()
         {
-            lock (lockobj)
+            await Task.Run(() => Count(1));
+            Console.WriteLine("処理が完了しました。");
+        }
+
+        static void Count(int n)
+        {
+            for (int i = 0; i < 50; i++)
             {
-                this.Count++;
+                Console.WriteLine($"Task{n}:{i}");
             }
         }
     }
