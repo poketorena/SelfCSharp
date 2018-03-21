@@ -14,11 +14,18 @@ namespace SelfCSharp
 {
     class AsyncHttp
     {
-        static async Task Main(string[] args)
+        static void Main(string[] args)
         {
             var client = new WebClient();
-            var result = await client.DownloadStringTaskAsync("https://codezine.jp/");
-            Console.WriteLine(result);
+
+            // 通信終了時のj処理
+            client.DownloadStringCompleted += (sender, e) =>
+            {
+                Console.WriteLine(e.Result);
+            };
+
+            client.DownloadStringTaskAsync("https://codezine.jp/");
+            Console.ReadLine();
         }
     }
 }
