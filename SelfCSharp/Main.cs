@@ -6,25 +6,37 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using SelfCSharp;
+using System.Threading;
 
 namespace SelfCSharp
 {
     class M
     {
-        delegate bool Hoge(string str);
-
         delegate TResult Foo<in T, out TResult>(T v1, T v2);
         static void Main(string[] args)
         {
-            var data = AppTables.Books
-                .Where(x => x.Published < new DateTime(2016, 12, 1))
-                .OrderBy(x => x.Publisher)
-                .ThenBy(x => x.Title)
-                .Select(x => new { Title = x.Title.Substring(0, 5), Price = x.Price, Publisher = x.Publisher });
+            // スレッドを生成
+            var t1 = new Thread(Count);
+            var t2 = new Thread(Count);
+            var t3 = new Thread(Count);
 
-            foreach (var item in data)
+            // スレッドを開始
+            t1.Start(1);
+            t2.Start(2);
+            t3.Start(3);
+
+            // スレッド終了まで待機
+            t1.Join();
+            t2.Join();
+            t3.Join();
+            Console.WriteLine("すべての処理が完了しました。");
+        }
+
+        static void Count(object n)
+        {
+            for (int i = 0; i < 50; i++)
             {
-                Console.WriteLine(item.Title + ":" + item.Price + ":" + item.Publisher);
+                Console.WriteLine($"Thread{n}: {i}");
             }
         }
     }
