@@ -9,23 +9,18 @@ using SelfCSharp;
 using System.Threading;
 using System.Diagnostics;
 using System.Net;
+using IronPython.Hosting;
 
 namespace SelfCSharp
 {
-    class AsyncHttp
+    class IronPython
     {
         static void Main(string[] args)
         {
-            var client = new WebClient();
-
-            // 通信終了時のj処理
-            client.DownloadStringCompleted += (sender, e) =>
-            {
-                Console.WriteLine(e.Result);
-            };
-
-            client.DownloadStringTaskAsync("https://codezine.jp/");
-            Console.ReadLine();
+            var py = Python.CreateRuntime();
+            dynamic script = py.UseFile("myClass.py");
+            dynamic clazz = script.MyClass();
+            Console.WriteLine(clazz.greet("山田"));
         }
     }
 }
